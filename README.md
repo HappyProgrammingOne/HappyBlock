@@ -4,7 +4,7 @@
 
 1. https://playentry.org/ws 사이트에 들어가세요
 2. F12키(안되면 Ctrl + Shift + C)를 누르시고 콘솔(Console)탭에 들어가세요.
-3. $.get('https://raw.githack.com/HappyProgrammingOne/HappyBlock/edit/main/block.js') 스크립트를 입력하시고 기다리세요.
+3. $.get('https://raw.githack.com/HappyProgrammingOne/HappyBlock/main/block.js') 스크립트를 입력하시고 기다리세요.
 
 Happy Block은 특급 블럭을 참고하였습니다.<br>특급 블럭 제작자 : https://github.com/entry62045
 
