@@ -1172,11 +1172,10 @@ const blocks = [
 		func: async (sprite, script) => {
 			let list = Entry.variableContainer.getListByName(script.getValue('VALUE', script));
 			if ((script.getValue('MAXORMIN', script)) == 'max') {
-				let confirmvalue = Math.max(...list);
+				return Math.max(...list);
 			} else if ((script.getValue('MAXORMIN', script)) == 'min') {
-				let confirmvalue = Math.min(...list);
+				return Math.min(...list);
 			}
-			return confirmvalue;
 		},
 	},
 	{
