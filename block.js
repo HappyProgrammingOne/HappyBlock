@@ -729,6 +729,8 @@ const blocks = [
 					['나무위키', 'namu.wiki/w/'],
 					['Bing', 'www.bing.com/search?q='],
 					['DuckDuckGo', 'duckduckgo.com/?q='],
+					['Yahoo!', 'search.yahoo.com/search?p='],
+					['Youtube', 'www.youtube.com/results?search_query='],
 					['zum', 'search.zum.com/search.zum?method=uni&option=accu&rd=1&query=']
 				],
 				fontSize: 11,
@@ -1170,11 +1172,11 @@ const blocks = [
 		},
 		class: 'text',
 		func: async (sprite, script) => {
-			let list = Entry.variableContainer.getListByName(script.getValue('VALUE', script));
+			const list = Entry.variableContainer.getListByName(script.getValue("ENTRYDELETELISTNAME"));
 			if ((script.getValue('MAXORMIN', script)) == 'max') {
-				return Math.max(...list);
+				return Math.max(...list.getArray());
 			} else if ((script.getValue('MAXORMIN', script)) == 'min') {
-				return Math.min(...list);
+				return Math.min(...list.getArray());
 			}
 		},
 	},
@@ -1420,7 +1422,7 @@ const blocks = [
 			const DeleteList = Entry.variableContainer.getListByName(script.getValue("ENTRYDELETELISTNAME"));
 			while(DeleteList.getArray().length > 0){
 				DeleteList.deleteValue(1);
-			}
+			} 
 			return script.callReturn();
 		},
 	},
@@ -1474,7 +1476,7 @@ const blocks = [
 	},
 	{
 		name: 'HappyBlock_BlockFindChange',
-		template: '블럭 감지 활성화(비공식로딩 변수 값을 1로 변경)%1',
+		template: '블럭 감지 활성화(해피블럭로딩 변수 값을 1로 변경)%1',
 		skeleton: 'basic',
 		color: {
 			default: '#1dbfa1',
@@ -1493,7 +1495,7 @@ const blocks = [
 		map: {},
 		class: 'text',
 		func: async (sprite, script) => {
-			Entry.variableContainer.getVariableByName('비공식로딩').value_ = 1;
+			Entry.variableContainer.getVariableByName('해피블럭로딩').value_ = 1;
 			return script.callReturn();
 		},
 	},
