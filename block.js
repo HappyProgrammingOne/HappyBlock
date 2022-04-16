@@ -1077,109 +1077,109 @@ const blocks = [
 			return confirmvalue;
 		},
 	},
-	{
-		name: 'HappyBlock_BoostModeBlocks',
-		template: '%1',
-		skeleton: 'basic_text',
-		color: {
-			default: EntryStatic.colorSet.common.TRANSPARENT,
-			darken: EntryStatic.colorSet.common.TRANSPARENT
-		},
-		params: [
-			{
-				type: 'Text',
-				text: 'Boost Mode(부스트 모드)',
-				color: EntryStatic.colorSet.common.TEXT,
-				class: 'bold',
-				align: 'center'
-			}
-		],
-		def: [],
-		map: {},
-		class: 'text'
-	},
-	{
-		name: 'HappyBlock_BoostMode',
-		template: '부스트 모드가 켜져 있는가?',
-		skeleton: 'basic_boolean_field',
-		color: {
-			default: '#850bb5',
-			darken: '#850bb5'
-		},
-		params: [],
-		def: [],
-		map: {},
-		class: 'text',
-		func: async (sprite, script) => {
-			(typeof useWebGL == 'undefined') ? false : useWebGL == true ? true : false;
-		},
-	},
-	{
-		name: 'HappyBlock_MathBlocks',
-		template: '%1',
-		skeleton: 'basic_text',
-		color: {
-			default: EntryStatic.colorSet.common.TRANSPARENT,
-			darken: EntryStatic.colorSet.common.TRANSPARENT
-		},
-		params: [
-			{
-				type: 'Text',
-				text: 'Math(계산)',
-				color: EntryStatic.colorSet.common.TEXT,
-				class: 'bold',
-				align: 'center'
-			}
-		],
-		def: [],
-		map: {},
-		class: 'text'
-	},
-	{
-		name: 'HappyBlock_MathMaxAndMin',
-		template: '%1리스트의 %2',
-		skeleton: 'basic_string_field',
-		color: {
-			default: '#edaa00',
-			darken: '#edaa00'
-		},
-		params: [
-			{
-				type: 'Block',
-				accept: 'string'
-			},
-			{
-				type: 'Dropdown',
-				options: [
-					['최댓값', 'max'],
-					['최솟값', 'min']
-				],
-				fontSize: 11,
-				arrowColor: '#bd8700',
-				value: 'max'
-			}
-		],
-		def: [
-			{
-				type: 'text',
-				params: [`리스트`]
-			},
-			null
-		],
-		map: {
-			VALUE: 0,
-			MAXORMIN: 1
-		},
-		class: 'text',
-		func: async (sprite, script) => {
-			const list = Entry.variableContainer.getListByName(script.getValue("ENTRYDELETELISTNAME"));
-			if ((script.getValue('MAXORMIN', script)) == 'max') {
-				return Math.max(...list.getArray());
-			} else if ((script.getValue('MAXORMIN', script)) == 'min') {
-				return Math.min(...list.getArray());
-			}
-		},
-	},
+// 	{
+// 		name: 'HappyBlock_BoostModeBlocks',
+// 		template: '%1',
+// 		skeleton: 'basic_text',
+// 		color: {
+// 			default: EntryStatic.colorSet.common.TRANSPARENT,
+// 			darken: EntryStatic.colorSet.common.TRANSPARENT
+// 		},
+// 		params: [
+// 			{
+// 				type: 'Text',
+// 				text: 'Boost Mode(부스트 모드)',
+// 				color: EntryStatic.colorSet.common.TEXT,
+// 				class: 'bold',
+// 				align: 'center'
+// 			}
+// 		],
+// 		def: [],
+// 		map: {},
+// 		class: 'text'
+// 	},
+// 	{
+// 		name: 'HappyBlock_BoostMode',
+// 		template: '부스트 모드가 켜져 있는가?',
+// 		skeleton: 'basic_boolean_field',
+// 		color: {
+// 			default: '#850bb5',
+// 			darken: '#850bb5'
+// 		},
+// 		params: [],
+// 		def: [],
+// 		map: {},
+// 		class: 'text',
+// 		func: async (sprite, script) => {
+// 			(typeof useWebGL == 'undefined') ? false : useWebGL == true ? true : false;
+// 		},
+// 	},
+// 	{
+// 		name: 'HappyBlock_MathBlocks',
+// 		template: '%1',
+// 		skeleton: 'basic_text',
+// 		color: {
+// 			default: EntryStatic.colorSet.common.TRANSPARENT,
+// 			darken: EntryStatic.colorSet.common.TRANSPARENT
+// 		},
+// 		params: [
+// 			{
+// 				type: 'Text',
+// 				text: 'Math(계산)',
+// 				color: EntryStatic.colorSet.common.TEXT,
+// 				class: 'bold',
+// 				align: 'center'
+// 			}
+// 		],
+// 		def: [],
+// 		map: {},
+// 		class: 'text'
+// 	},
+// 	{
+// 		name: 'HappyBlock_MathMaxAndMin',
+// 		template: '%1리스트의 %2',
+// 		skeleton: 'basic_string_field',
+// 		color: {
+// 			default: '#edaa00',
+// 			darken: '#edaa00'
+// 		},
+// 		params: [
+// 			{
+// 				type: 'Block',
+// 				accept: 'string'
+// 			},
+// 			{
+// 				type: 'Dropdown',
+// 				options: [
+// 					['최댓값', 'max'],
+// 					['최솟값', 'min']
+// 				],
+// 				fontSize: 11,
+// 				arrowColor: '#bd8700',
+// 				value: 'max'
+// 			}
+// 		],
+// 		def: [
+// 			{
+// 				type: 'text',
+// 				params: [`리스트`]
+// 			},
+// 			null
+// 		],
+// 		map: {
+// 			VALUE: 0,
+// 			MAXORMIN: 1
+// 		},
+// 		class: 'text',
+// 		func: async (sprite, script) => {
+// 			const list = Entry.variableContainer.getListByName(script.getValue("ENTRYDELETELISTNAME"));
+// 			if ((script.getValue('MAXORMIN', script)) == 'max') {
+// 				return Math.max(...list.getArray());
+// 			} else if ((script.getValue('MAXORMIN', script)) == 'min') {
+// 				return Math.min(...list.getArray());
+// 			}
+// 		},
+// 	},
 	{
 		name: 'HappyBlock_ValueBlocks',
 		template: '%1',
